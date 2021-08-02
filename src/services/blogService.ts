@@ -33,7 +33,8 @@ class BlogService{
     }
 
     async deleteBlog(id:string) : Promise<void>{
-        await Blog.deleteOne({id});
+        await Blog.deleteOne({_id:id});
+        await Comment.deleteMany({fromId : id});
     }
 }
 

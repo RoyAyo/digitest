@@ -29,7 +29,7 @@ class CommentService{
     }
 
     async deleteComment(id:string) : Promise<void>{
-        await Comment.deleteOne({id});
+        await Comment.deleteOne({_id:id});
     }
 }
 

@@ -17,7 +17,7 @@ class CommentController{
 
     async createComment(req : Request , res : Response){
         try {
-            const id = req.params.id; 
+            const id = req.params.blogId; 
             if((req.body.message === undefined) || (req.body.message.length < 3)){
                 return catchError('message is required', res, 400);
             }

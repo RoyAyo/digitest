@@ -5,13 +5,11 @@ export interface IComment extends Document {
   fromId : string
 }
 
-const CommentSchema = new Schema(
+const CommentSchema = new Schema({
     post : {
       type: String
     },
-
     fromId : String
-
   },
   {
     timestamps: true,

@@ -6,10 +6,10 @@ import dotenv from 'dotenv';
 // configurations
 dotenv.config();
 import './config/database';
-import './config/redis';
 
 // routes
-import ApiRoute from './routes/';
+import BlogRoute from './routes/api/blog';
+import CommentRoute from './routes/api/comment';
 
 // Boot express
 const app: Application = express();
@@ -22,7 +22,8 @@ app.use(helmet());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use(`${base}/`,ApiRoute);
+app.use(`${base}/blog`,BlogRoute);
+app.use(`${base}/comment`,CommentRoute);
 
 // Application routing
 app.get('/', (req: Request, res: Response) => {

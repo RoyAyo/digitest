@@ -4,10 +4,8 @@ export interface IBlog extends Document {
   post: string
 }
 
-const BlogSchema = new Schema(
-    post : {
-      type: String
-    },
+const BlogSchema = new Schema({
+    post : String,
   },
   {
     timestamps: true,
